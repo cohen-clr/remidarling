@@ -1,16 +1,15 @@
-/* === Custom Fonts === */
+@font-face {
+  font-family: 'ROMANTIC';
+  src: url('ROMANTIC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Lora';
   src: url('./fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
-}
-
-@font-face {
-  font-family: 'ROMANTIC';
-  src: url('./fonts/ROMANTIC.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* === Color + layout variables === */
@@ -345,5 +344,9 @@ body {
 }
 
 * {
+  font-family: 'ROMANTIC', serif !important;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, a, span, div {
   font-family: 'ROMANTIC', serif !important;
 }
