@@ -99,14 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 <script>
-const music = document.querySelector('audio');
+const music = document.getElementById('music');
 const record = document.querySelector('.record');
 
-music.addEventListener('play', () => {
-  record.style.animationPlayState = 'running';
-});
+if (music && record) {
+  music.addEventListener('play', () => {
+    record.style.animationPlayState = 'running';
+  });
 
-music.addEventListener('pause', () => {
-  record.style.animationPlayState = 'paused';
-});
-</script>
+  music.addEventListener('pause', () => {
+    record.style.animationPlayState = 'paused';
+  });
+}
