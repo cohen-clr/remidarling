@@ -1,6 +1,3 @@
-body {
-  border: 10px solid red !important;
-}
 @font-face {
   font-family: 'ROMANTIC';
   src: url('ROMANTIC.woff2') format('woff2');
@@ -89,64 +86,35 @@ body {
   color: var(--accent-2);
 }
 
-/* === Music Section (always visible playlists) === */
-.music-flap {
-  margin-top: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(250, 245, 240, 0.95)
-  );
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 10px 28px var(--shadow);
+/* === Always visible playlists === */
+.music-flap button.flap-toggle {
+  display: none; /* hide the tap-to-open button */
 }
 
-/* Hide toggle button */
-.flap-toggle {
-  display: none;
-}
-
-#music-area {
+.music-area {
   display: block !important;
-  margin-top: 12px;
+  opacity: 1;
+  transform: none;
 }
 
-.spotify-embed {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.spotify-embed iframe {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--shadow);
-  border: 0;
-}
-
-/* === Turntable Decoration === */
+/* === Turntable record position === */
 .turntable {
   position: fixed;
-  bottom: -100px;  /* push it down so only top half shows */
-  right: -100px;   /* push it right so only top half shows */
-  width: 260px;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-  pointer-events: none;  /* makes sure you can’t accidentally tap it */
-  opacity: 0.8;
+  bottom: -60px; /* half hidden at the bottom */
+  right: -60px;  /* half hidden at the side */
+  width: 200px;
+  height: 200px;
+  z-index: 50;
 }
 
 .record {
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle, #444 40%, #222 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  animation: spin 8s linear infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: spin 6s linear infinite;
+  animation-play-state: running;
 }
 
 .record::before {
@@ -154,8 +122,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: #ff9eb5;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -164,31 +132,4 @@ body {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-/* === Footer === */
-.footer {
-  text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-/* === Small screen adjustments === */
-@media (max-width: 600px) {
-  .spotify-embed {
-    flex-direction: column;
-    align-items: center;
-  }
-  .record {
-    width: 160px;
-    height: 160px;
-  }
-  .turntable {
-    bottom: -40px;
-    right: -40px;
-    width: 180px;
-    height: 180px;
-  }
 }
