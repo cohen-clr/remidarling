@@ -1,3 +1,13 @@
+a {
+  color: inherit;            /* make links use the surrounding text color */
+  text-decoration: none;     /* removes the underline */
+}
+
+a:hover {
+  text-decoration: underline; /* optional: adds underline only when hovered */
+  opacity: 0.8;              /* optional: subtle fade on hover */
+}
+
 @font-face {
   font-family: 'ROMANTIC';
   src: url('ROMANTIC.woff2') format('woff2');
