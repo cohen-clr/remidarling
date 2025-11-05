@@ -217,3 +217,12 @@ body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-style: italic;
+  color: #704b2a;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
