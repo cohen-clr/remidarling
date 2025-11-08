@@ -6,13 +6,7 @@
   <title>tunes</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<script>
-  const turntable = document.querySelector('.turntable');
-  const record = document.querySelector('.record');
 
-  record.addEventListener('click', () => {
-    turntable.classList.toggle('playing');
-  });
 </script>
 
 <body class="paper-bg">
@@ -50,6 +44,15 @@
   </footer>
 
   <script src="js/script.js"></script>
+<script>
+  const turntable = document.querySelector('.turntable');
+  const record = document.querySelector('.record');
+
+  record.addEventListener('click', () => {
+    turntable.classList.toggle('playing');
+  });
+</script>
+
 </body>
 </html>
 
