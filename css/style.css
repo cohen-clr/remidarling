@@ -123,7 +123,7 @@ a:hover {
   padding: 0;
 }
 
-/* === Base === */
+
 body {
   font-family: 'Lora', serif;
   color: var(--text);
@@ -132,13 +132,13 @@ body {
   letter-spacing: 1px;
 }
 
-/* === Typography === */
+
 .title, .section-title, .nav .brand, .letter-title, .bubble h3 {
   font-family: 'ROMANTIC', cursive;
   letter-spacing: 4px;
 }
 
-/* === Layout === */
+
 .container {
   max-width: 980px;
   margin: 36px auto;
@@ -226,6 +226,16 @@ body {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.container {
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
 }
 
 .footer {
