@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.position = "fixed";
       el.style.left = 10 + Math.random() * 80 + "vw";
       el.style.top = 20 + Math.random() * 60 + "vh";
-      el.style.fontSize = 50 + Math.random() * 60 + "px";
+      el.style.fontSize = 40 + Math.random() * 50 + "px";
       el.style.opacity = "1";
       el.style.pointerEvents = "none";
       el.style.transition = "transform 2s ease-out, opacity 2s";
@@ -82,15 +82,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // === AUTO ANIMATE TURNTABLE & STARS ===
-  const turntable = document.querySelector(".turntable");
+  // === TURNTABLE ANIMATION ===
+  const record = document.querySelector(".record");
+  const hand = document.querySelector(".hand");
   const body = document.body;
 
+  // Start record spin + stars after a short delay
   setTimeout(() => {
     body.classList.add("playing");
-    if (turntable) {
-      turntable.classList.add("playing");
-      turntable.classList.add("spin");
+    if (record) record.classList.add("spin");
+  }, 800);
+
+  // Animate the hand only once on load
+  if (hand) {
+    hand.style.transition = "transform 2.5s cubic-bezier(0.55, 0, 0.1, 1)";
+    hand.style.transformOrigin = "top right";
+
+    // Move arm toward record only once per refresh
+    setTimeout(() => {
+      hand.classList.add("playing");
+      hand.style.transform = "rotate(18deg)";
+    }, 1000);
+  }
+
+  // Optional: Pause record when tab hidden
+  document.addEventListener("visibilitychange", () => {
+    if (record) {
+      record.style.animationPlayState = document.hidden ? "paused" : "running";
     }
-  }, 1000); // wait 1s before starting animation
+  });
 });
