@@ -77,57 +77,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* POLAROID */
-.polaroid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #fffaf5;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-}
-.main-photo {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.caption {
-  margin-top: 0.5rem;
-  font-style: italic;
-  color: #704b2a;
-  font-size: 0.95rem;
-}
-
-/* LINK CARDS */
-.preview { display: none; opacity: 0; transition: opacity 0.6s ease; margin-top: 2rem; text-align: center; }
-.preview.show { display: block; opacity: 1; }
-.preview-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  max-width: 800px;
-  margin: 1rem auto 0;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fffaf5;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 240px;
-}
-.card:hover { transform: scale(1.03); box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
-.card img { width: 100%; height: 180px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px; }
-.card-text { padding: 0.8rem; font-size: 1rem; color: #4a3a2a; font-weight: 500; }
-
 /* MUSIC AREA ALWAYS SHOWN */
 .music-flap button.flap-toggle { display: none; }
 .music-area { display: block !important; opacity: 1; transform: none; }
@@ -139,10 +88,24 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 100%;
 }
 
+/* PLINTH BASE */
+.plinth {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 220px;
+  height: 40px;
+  background: linear-gradient(180deg, #d5b893, #b48a60);
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  z-index: 0;
+}
+
+/* RECORD */
 .record {
   position: relative;
   width: 180px;
@@ -151,6 +114,7 @@ body {
   background: repeating-radial-gradient(circle, #0a0a0a 0, #0a0a0a 1px, #000 2px);
   box-shadow: inset 0 0 15px rgba(255,255,255,0.05), inset 0 0 40px rgba(0,0,0,0.5);
   margin-right: 50px;
+  z-index: 2;
 }
 
 .record::before {
@@ -181,15 +145,16 @@ body {
 /* ARM */
 .hand {
   position: absolute;
-  width: 120px;
+  width: 110px;
   height: 6px;
   background: #bfa98f;
   border-radius: 3px;
-  top: 40px;
-  right: 20px;
+  top: 35px;
+  right: 40px;
   transform-origin: top right;
   transform: rotate(60deg);
-  transition: transform 0.8s ease;
+  transition: transform 2s ease;
+  z-index: 3;
 }
 .hand .head {
   position: absolute;
@@ -201,15 +166,12 @@ body {
   left: 0;
 }
 
-.turntable.playing .hand {
-  animation: handMove 2s ease-in-out infinite alternate;
-}
-@keyframes handMove {
-  from { transform: translateY(0) rotate(60deg); }
-  to { transform: translateY(-6px) rotate(25deg); }
+/* The one-time move toward vinyl */
+.hand.move {
+  transform: rotate(25deg);
 }
 
-/* SPINNING */
+/* SPINNING RECORD */
 .turntable.spin .record {
   animation: spinRecord 5s linear infinite;
 }
@@ -275,5 +237,6 @@ body.playing .star {
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .record { width: 150px; height: 150px; margin-right: 20px; }
-  .hand { width: 100px; right: 10px; top: 30px; }
+  .hand { width: 90px; right: 20px; top: 30px; }
+  .plinth { width: 180px; height: 30px; bottom: -20px; }
 }
