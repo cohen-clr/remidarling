@@ -52,24 +52,6 @@ body.home-page::before {
   z-index: -1;
 }
 
-/* ✅ Optional smooth slow rotation (only the image layer, not the content) */
-body.home-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('../images/TychoSkymapII.t3_04096x02048.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  opacity: 0.9;
-  animation: bgRotate 200s linear infinite;
-}
-
-@keyframes bgRotate {
-  from { transform: rotate(0deg) scale(1.05); }
-  to { transform: rotate(360deg) scale(1.05); }
-}
 
 
 /* 🌈 OTHER PAGE THEMES */
