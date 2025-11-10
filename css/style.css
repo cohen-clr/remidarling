@@ -24,9 +24,9 @@ a:hover {
 /* 🎨 ROOT COLORS */
 :root {
   --paper: #ebd7bf;
-  --accent: #7b5a36;
-  --accent-2: #a67c52;
-  --text: #3b2f2a;
+  --accent: #B5934A;
+  --accent-2: #BAA880;
+  --text: #C4A970;
   --muted: #6b5a50;
   --shadow: rgba(45, 33, 25, 0.12);
 }
