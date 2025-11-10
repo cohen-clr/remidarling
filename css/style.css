@@ -29,6 +29,49 @@ a:hover {
   --shadow: rgba(45, 33, 25, 0.12);
 }
 
+body.subs {
+  --paper: #f8e3e3;
+  --accent: #b35c5c;
+  --accent-2: #d67a7a;
+  --text: #472a2a;
+}
+
+body.photos {
+  --paper: #eaf0e2;
+  --accent: #5a7b36;
+  --accent-2: #82a652;
+  --text: #2f3b2a;
+}
+
+body.letter {
+  --paper: #fff1d6;
+  --accent: #a67036;
+  --accent-2: #c08e52;
+  --text: #3b2f1a;
+}
+
+body.tunes {
+  --paper: #e3d3eb;
+  --accent: #654d7a;
+  --accent-2: #8b6fa3;
+  --text: #3c2e4a;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: 'Lora', serif;
+}
+
+h1, h2 {
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent-2);
+}
+
+
 /* GLOBAL */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
